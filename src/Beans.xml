@@ -10,4 +10,5 @@
    	<property name="message" value="HelloWorld"/>
    </bean>
 
+	<bean class="com.springtutorial.InitHelloWorld"></bean>
 </beans>
