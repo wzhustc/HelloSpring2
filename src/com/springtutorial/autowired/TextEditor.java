@@ -3,6 +3,12 @@ package com.springtutorial.autowired;
 public class TextEditor {
 	private SpellChecker spellChecker;
 	   private String name;
+	   
+	   //构造法autowired
+	   public TextEditor(SpellChecker spellChecker) {
+		   this.spellChecker = spellChecker;
+	   }
+	   
 
 	   public void setSpellChecker( SpellChecker spellChecker ){
 	      this.spellChecker = spellChecker;
