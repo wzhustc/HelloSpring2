@@ -18,4 +18,12 @@
 		<property name="message1" value="HelloWorld" />
 		<property name="message3" value="HelloChina" />
 	</bean>
+	
+	<!-- 这是依赖注入dependency inject的bean -->
+	<bean id="spellCheck" class="com.springtutorial.DI.SpellChecker">
+		
+	</bean>
+	
+	
+	
 </beans>

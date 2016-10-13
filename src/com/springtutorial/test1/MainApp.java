@@ -1,4 +1,4 @@
-package com.springtutorial;
+package com.springtutorial.test1;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;

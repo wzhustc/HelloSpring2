@@ -1,4 +1,4 @@
-package com.springtutorial;
+package com.springtutorial.test1;
 
 public class HelloChina {
 	   private String message1;
