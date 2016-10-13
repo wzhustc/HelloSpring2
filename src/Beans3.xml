@@ -13,7 +13,13 @@
 	<bean id="student" class="com.springtutorial.annotation.Student">
 		<property name="age" value="11" />
 		<property name="name" value="vivi" />
+	</bean> 
+
+	<bean id="textEditor" class="com.springtutorial.annotation.TextEditor">
 	</bean>
 
-    
+
+    <!-- Definition for spellChecker bean -->
+   <bean id="spellChecker" class="com.springtutorial.annotation.SpellChecker">
+   </bean>    
 </beans>

@@ -10,5 +10,9 @@ public class MainApp {
 		Student st = (Student)con.getBean("student");
 		System.out.println(st.getAge());
 		System.out.println(st.getName());
+		
+		System.out.println("------------------");
+		TextEditor te = (TextEditor) con.getBean("textEditor");
+		te.spellCheck();
 	}
 }
