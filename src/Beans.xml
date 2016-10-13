@@ -5,23 +5,13 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <bean id="helloworld" class="com.springtutorial.HelloWorld"
-   	 >
-   	<property name="message1" value="HelloWorld"/>
-   	<property name="message2" value="Hello Second World"/>
-   </bean>
-	<!-- 对应初始化前后的方法的处理器 -->
-	<bean class="com.springtutorial.InitHelloWorld"></bean>
-	
-	<!-- 说明bean的继承关系 -->
-	<bean id="helloChina" class="com.springtutorial.HelloChina" parent="helloworld">
-		<property name="message1" value="HelloWorld" />
-		<property name="message3" value="HelloChina" />
+	<!-- 这是依赖注入dependency inject的bean -->
+	<bean id="spellChecker" class="com.springtutorial.DI.SpellChecker">
 	</bean>
 	
-	<!-- 这是依赖注入dependency inject的bean -->
-	<bean id="spellCheck" class="com.springtutorial.DI.SpellChecker">
-		
+	<!-- 通过构造方法形式依赖注入 -->
+	<bean id="testEditor" class="com.springtutorial.DI.TestEditor">
+		<constructor-arg ref="spellChecker" />
 	</bean>
 	
 	

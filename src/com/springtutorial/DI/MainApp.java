@@ -6,8 +6,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		//这里getBean()的参数是Bean.xml中的id，
+		TestEditor te = (TestEditor) context.getBean("testEditor");
 		
-		TestEditor te = (TestEditor) context.getBean("spellCheck");
+		te.spellCheck();
 		
 	}
 	
