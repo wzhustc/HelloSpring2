@@ -6,18 +6,14 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-	
-	<!-- 下面autowire值等于byName, 等于byType分别表示以不同方式装配 -->
-	<bean id="textEditor" class="com.springtutorial.autowired.TextEditor"
-	 autowire="byType">
-		<property name="name" value="Generic Text Editor"></property>
-	</bean>
-
-	<bean id="spellChecker" class="com.springtutorial.autowired.SpellChecker">
-	</bean>
-	
-	<!-- 表示允许使用注解形式进行自动装配 -->
+ 
+<!-- 表示允许使用注解形式进行自动装配 -->
 	<context:annotation-config />
 	
+	<bean id="student" class="com.springtutorial.annotation.Student">
+		<property name="age" value="11" />
+		<property name="name" value="vivi" />
+	</bean>
 
+    
 </beans>
