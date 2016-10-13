@@ -7,7 +7,7 @@
 
 	<!-- 这是依赖注入dependency inject的bean -->
 	<bean id="spellChecker" class="com.springtutorial.DI.SpellChecker">
-	</bean>
+	</bean> 
 	
 	<!-- 通过构造方法形式依赖注入 -->
 	<bean id="testEditor" class="com.springtutorial.DI.TestEditor">
@@ -17,6 +17,16 @@
 	<bean id="testEditor2" class="com.springtutorial.DI.TestEditor2">
 		<property name="spellChecker" ref="spellChecker"/>
 	</bean>
+	
+	<!-- 内部bean -->
+	<bean id="testEditor3" class="com.springtutorial.DI.TestEditor3">
+		<property name="spellChecker">
+			<bean id="spellChecker1" class="com.springtutorial.DI.SpellChecker"></bean>
+		</property>
+	</bean>
+	
+	
+	
 	
 	
 </beans>

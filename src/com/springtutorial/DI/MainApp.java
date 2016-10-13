@@ -14,6 +14,10 @@ public class MainApp {
 		//这里用setter方法注入bean
 		TestEditor2 te2 = (TestEditor2) context.getBean("testEditor2");
 		te2.spellCheck();
+		
+		//这里说的是内部bean知识点
+		TestEditor3 te3 = (TestEditor3) context.getBean("testEditor3");
+		te3.spellCheck();
 	}
 	
 	
