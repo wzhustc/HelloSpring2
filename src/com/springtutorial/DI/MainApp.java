@@ -3,6 +3,8 @@ package com.springtutorial.DI;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.springtutorial.javaCollection.JavaCollection;
+
 public class MainApp {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
@@ -18,6 +20,14 @@ public class MainApp {
 		//这里说的是内部bean知识点
 		TestEditor3 te3 = (TestEditor3) context.getBean("testEditor3");
 		te3.spellCheck();
+		
+		
+		//java collection
+		JavaCollection jc = (JavaCollection) context.getBean("javaCollection");
+		jc.getAddressList();
+		jc.getAddressMap();
+		jc.getAddressProp();
+		jc.getAddressSet();
 	}
 	
 	
