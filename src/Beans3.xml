@@ -10,16 +10,23 @@
 <!-- 表示允许使用注解形式进行自动装配 -->
 	<context:annotation-config />
 	
-	<bean id="student" class="com.springtutorial.annotation.Student">
+	<bean id="student1" class="com.springtutorial.annotation.Student">
 		<property name="age" value="11" />
-		<property name="name" value="vivi" />
+		<property name="name" value="11vivi" />
 	</bean> 
+	
+	<bean id="student2" class="com.springtutorial.annotation.Student">
+		<property name="age" value="14" />
+		<property name="name" value="14helloworld"></property>
+	</bean>
 
 	<bean id="textEditor" class="com.springtutorial.annotation.TextEditor">
 	</bean>
-
-
+	
     <!-- Definition for spellChecker bean -->
    <bean id="spellChecker" class="com.springtutorial.annotation.SpellChecker">
    </bean>    
+   
+   <bean id="profile" class="com.springtutorial.annotation.Profile">
+   </bean>
 </beans>
