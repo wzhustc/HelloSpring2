@@ -10,15 +10,15 @@ public class MainApp {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans5.xml");
 
-		StudentJDBCTemplate studentJDBCTemplate = (StudentJDBCTemplate) context.getBean("studentJDBCTemplate");
+		StudentDAOImpl studentDAOImpl = (StudentDAOImpl) context.getBean("studentDAOImpl");
 
 		System.out.println("------Records Creation--------");
-		studentJDBCTemplate.create("Zara", 11);
-		studentJDBCTemplate.create("Nuha", 2);
-		studentJDBCTemplate.create("Ayan", 15);
+		studentDAOImpl.create("Zara", 11);
+		studentDAOImpl.create("Nuha", 2);
+		studentDAOImpl.create("Ayan", 15);
 
 		System.out.println("------Listing Multiple Records--------");
-		List<Student> students = studentJDBCTemplate.listStudents();
+		List<Student> students = studentDAOImpl.listStudents();
 		for (Student record : students) {
 			System.out.print("ID : " + record.getId());
 			System.out.print(", Name : " + record.getName());
@@ -26,10 +26,10 @@ public class MainApp {
 		}
 
 		System.out.println("----Updating Record with ID = 2 -----");
-		studentJDBCTemplate.update(2, 20);
+		studentDAOImpl.update(2, 20);
 
 		System.out.println("----Listing Record with ID = 2 -----");
-		Student student = studentJDBCTemplate.getStudent(2);
+		Student student = studentDAOImpl.getStudent(2);
 		System.out.print("ID : " + student.getId());
 		System.out.print(", Name : " + student.getName());
 		System.out.println(", Age : " + student.getAge());
