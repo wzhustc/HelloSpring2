@@ -9,34 +9,31 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans5.xml");
-		
-		StudentDAOImpl studentDAOImpl = (StudentDAOImpl) context.getBean("studentDAOImpl");
-		
-		studentDAOImpl.create("Stark", 22);
-		studentDAOImpl.create("Jhon Snow", 23);
-		studentDAOImpl.create("AYa", 15);
-		
-		System.out.println("---------------------");
-		List<Student> list = studentDAOImpl.listStudents();
-		for (Student student : list) {
-			System.out.print("id : " + student.getId());
-			System.out.print(", name : " + student.getName());
-			System.out.print( ", age : " + student.getAge());
+
+		StudentJDBCTemplate studentJDBCTemplate = (StudentJDBCTemplate) context.getBean("studentJDBCTemplate");
+
+		System.out.println("------Records Creation--------");
+		studentJDBCTemplate.create("Zara", 11);
+		studentJDBCTemplate.create("Nuha", 2);
+		studentJDBCTemplate.create("Ayan", 15);
+
+		System.out.println("------Listing Multiple Records--------");
+		List<Student> students = studentJDBCTemplate.listStudents();
+		for (Student record : students) {
+			System.out.print("ID : " + record.getId());
+			System.out.print(", Name : " + record.getName());
+			System.out.println(", Age : " + record.getAge());
 		}
-		
-		System.out.println("---------------------");
-		Student student = studentDAOImpl.selectStudentById(3);
-		System.out.println("id=3的name ： " + student.getName());
-		
-		System.out.println("---------------------");
-		Student st = studentDAOImpl.selectStudentByName("AYa");
-		System.out.println("name=AYa的年龄：" + st.getAge());
-		
-		System.out.println("---------------------");
-		studentDAOImpl.update(1, 55);
-		Student s = studentDAOImpl.selectStudentById(1);
-		System.out.println("id=1的年龄为：" + s.getAge());
-		
+
+		System.out.println("----Updating Record with ID = 2 -----");
+		studentJDBCTemplate.update(2, 20);
+
+		System.out.println("----Listing Record with ID = 2 -----");
+		Student student = studentJDBCTemplate.getStudent(2);
+		System.out.print("ID : " + student.getId());
+		System.out.print(", Name : " + student.getName());
+		System.out.println(", Age : " + student.getAge());
+
 	}
 
 }
